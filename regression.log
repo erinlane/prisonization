@@ -1,0 +1,38 @@
+-------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\erlane\Box Sync\CSCS_530\prisonization_github\regression.log
+  log type:  text
+ opened on:  24 Apr 2016, 22:40:12
+
+. import delimited "C:\Users\erlane\Box Sync\CSCS_530\prisonization_github\pris_output.csv", clear
+(7 vars, 1,100 obs)
+
+. regress endingprisportion prispct
+
+      Source |       SS           df       MS      Number of obs   =     1,100
+-------------+----------------------------------   F(1, 1098)      =    869.78
+       Model |  121.485091         1  121.485091   Prob > F        =    0.0000
+    Residual |  153.361273     1,098   .13967329   R-squared       =    0.4420
+-------------+----------------------------------   Adj R-squared   =    0.4415
+       Total |  274.846364     1,099  .250087683   Root MSE        =    .37373
+
+------------------------------------------------------------------------------
+endingpris~n |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+     prispct |   1.050909   .0356337    29.49   0.000     .9809914    1.120827
+       _cons |  -.0372727   .0210812    -1.77   0.077    -.0786366    .0040912
+------------------------------------------------------------------------------
+
+. test _b[prispct]=1
+
+ ( 1)  prispct = 1
+
+       F(  1,  1098) =    2.04
+            Prob > F =    0.1534
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\erlane\Box Sync\CSCS_530\prisonization_github\regression.log
+  log type:  text
+ closed on:  24 Apr 2016, 22:40:18
+-------------------------------------------------------------------------------------------------------
